@@ -1,4 +1,4 @@
-package com.volkangurbuz.petclinic.model;
+package petclinic.model;
 
 public class PetType {
 
