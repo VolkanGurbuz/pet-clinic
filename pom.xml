@@ -41,7 +41,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:springframeworkguru/sfg-pet-clinic.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:VolkanGurbuz/pet-clinic.git</developerConnection>
       <tag>pet-clinic-0.0.4</tag>
   </scm>
 
