@@ -1,11 +1,11 @@
 package com.volkangurbuz.petclinic.services.map;
 
 import com.volkangurbuz.petclinic.model.Pet;
-import com.volkangurbuz.petclinic.services.CrudService;
+import com.volkangurbuz.petclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
   @Override
   public Set<Pet> findAll() {
     return super.findAll();
