@@ -1,6 +1,5 @@
 package com.volkangurbuz.petclinic.controllers;
 
-import com.volkangurbuz.petclinic.services.PetService;
 import com.volkangurbuz.petclinic.services.VetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
