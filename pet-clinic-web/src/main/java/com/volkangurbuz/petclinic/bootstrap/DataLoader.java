@@ -1,11 +1,7 @@
 package com.volkangurbuz.petclinic.bootstrap;
 
 import com.volkangurbuz.petclinic.model.*;
-import com.volkangurbuz.petclinic.services.OwnerService;
-import com.volkangurbuz.petclinic.services.PetTypeService;
-import com.volkangurbuz.petclinic.services.SpecialtyService;
-import com.volkangurbuz.petclinic.services.VetService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.volkangurbuz.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,16 +14,19 @@ public class DataLoader implements CommandLineRunner {
   private final VetService vetService;
   private final PetTypeService petTypeService;
   private final SpecialtyService specialityService;
+  private final VisitService visitService;
 
   public DataLoader(
       OwnerService ownerService,
       VetService vetService,
       PetTypeService petTypeService,
-      SpecialtyService specialityService) {
+      SpecialtyService specialityService,
+      VisitService visitService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialityService = specialityService;
+    this.visitService = visitService;
   }
 
   @Override
@@ -76,6 +75,13 @@ public class DataLoader implements CommandLineRunner {
     owner1.getPets().add(michaeLCats);
 
     System.out.println("loaded owners");
+
+    Visit caVisit = new Visit();
+    caVisit.setPet(michaeLCats);
+    caVisit.setLocalDate(LocalDate.now());
+    caVisit.setDesciption("Snezzy Kitty");
+
+    visitService.save(caVisit);
 
     Vet vet = new Vet();
     vet.setFirstName("Sam");
