@@ -7,7 +7,6 @@ import java.util.Set;
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
-
   // anything that is a many relationship is going to be lazily initialized. when eager is set, jpa
   // is going to set all once, the default one does not load
   @ManyToMany(fetch = FetchType.EAGER)
